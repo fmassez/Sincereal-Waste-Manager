@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  wastemanager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wastemanager
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    networks:
+      - wastemanager-network
+
+  # Optionnel: Base de données pour le mode multi-utilisateurs
+  # mongodb:
+  #   image: mongo:7
+  #   container_name: wastemanager-db
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongodb_data:/data/db
+  #   restart: unless-stopped
+  #   networks:
+  #     - wastemanager-network
+
+networks:
+  wastemanager-network:
+    driver: bridge
+
+# volumes:
+#   mongodb_data:

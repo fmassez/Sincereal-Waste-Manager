@@ -1,0 +1,12 @@
+{
+  "name": "wastemanager-server",
+  "version": "1.0.0",
+  "description": "Serveur local pour Waste Manager",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
