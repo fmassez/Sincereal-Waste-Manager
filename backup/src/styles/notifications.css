@@ -1,0 +1,113 @@
+/* Custom Notification Styles - Modern Design with White Background */
+
+/* Override sonner toast styles */
+[data-sonner-toast] {
+  background: #ffffff !important;
+  border: none !important;
+  border-left: 4px solid !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+  padding: 16px 20px !important;
+  color: #1e293b !important;
+}
+
+/* Success toast - Green left border */
+[data-sonner-toast][data-type="success"] {
+  border-left-color: #10b981 !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-title] {
+  color: #059669 !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-icon] {
+  color: #10b981 !important;
+}
+
+/* Error toast - Red left border */
+[data-sonner-toast][data-type="error"] {
+  border-left-color: #ef4444 !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-title] {
+  color: #dc2626 !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-icon] {
+  color: #ef4444 !important;
+}
+
+/* Warning toast - Orange left border */
+[data-sonner-toast][data-type="warning"] {
+  border-left-color: #f59e0b !important;
+}
+
+[data-sonner-toast][data-type="warning"] [data-title] {
+  color: #d97706 !important;
+}
+
+[data-sonner-toast][data-type="warning"] [data-icon] {
+  color: #f59e0b !important;
+}
+
+/* Info toast - Blue left border */
+[data-sonner-toast][data-type="info"] {
+  border-left-color: #3b82f6 !important;
+}
+
+[data-sonner-toast][data-type="info"] [data-title] {
+  color: #2563eb !important;
+}
+
+[data-sonner-toast][data-type="info"] [data-icon] {
+  color: #3b82f6 !important;
+}
+
+/* Ensure all text is dark and readable */
+[data-sonner-toast] [data-title] {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+}
+
+[data-sonner-toast] [data-description] {
+  font-size: 14px !important;
+  color: #64748b !important;
+  line-height: 1.5 !important;
+}
+
+/* Close button styling */
+[data-sonner-toast] [data-close-button] {
+  color: #94a3b8 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+[data-sonner-toast] [data-close-button]:hover {
+  color: #64748b !important;
+  background: #f1f5f9 !important;
+  border-radius: 6px !important;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,40 @@
+# Docker Compose pour Sincereal Waste Manager
+# Usage : docker-compose up -d
+
+version: '3.8'
+
+services:
+  sincereal-waste-manager:
+    build:
+      context: ..
+      dockerfile: packages/Dockerfile
+    container_name: sincereal-waste-manager
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "app.name=Sincereal Waste Manager"
+      - "app.version=1.0.0"
+
+# Optionnel : Reverse proxy avec Traefik
+#  traefik:
+#    image: traefik:v2.10
+#    container_name: traefik
+#    command:
+#      - "--api.insecure=true"
+#      - "--providers.docker=true"
+#      - "--entrypoints.web.address=:80"
+#      - "--entrypoints.websecure.address=:443"
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#      - "8080:8080"
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#    restart: unless-stopped
